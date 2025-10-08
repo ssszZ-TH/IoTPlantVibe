@@ -6,7 +6,7 @@ services:
     ports:
       - "1883:1883"  # MQTT port
     volumes:
-      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf  # Optional config (allow anonymous)
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
     restart: always
 
   influxdb:
@@ -43,9 +43,12 @@ services:
       - "3000:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin123
+      - GF_INSTALL_PLUGINS=grafana-simple-json-datasource
     volumes:
       - grafana-data:/var/lib/grafana
-      - ./grafana-provisioning:/etc/grafana/provisioning
+      - ./grafana-provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana-provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana-dashboards:/var/lib/grafana/dashboards
     depends_on:
       - influxdb
     restart: always
