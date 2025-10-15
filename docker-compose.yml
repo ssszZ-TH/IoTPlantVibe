@@ -3,7 +3,7 @@ services:
   mosquitto:
     image: eclipse-mosquitto:2.0
     ports:
-      - "1883:1883"  # MQTT port
+      - "1883:1883"
     volumes:
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
     restart: always
@@ -30,7 +30,8 @@ services:
       - mosquitto
       - influxdb
     volumes:
-      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro # ro = read-only cannot edit from container
+      - ./mac_map.json:/etc/telegraf/mac_map.json:ro  # Mount lookup file
     restart: always
 
   grafana:
