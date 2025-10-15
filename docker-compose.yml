@@ -30,14 +30,14 @@ services:
       - mosquitto
       - influxdb
     volumes:
-      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro # ro = read-only cannot edit from container
-      - ./mac_map.json:/etc/telegraf/mac_map.json:ro  # Mount lookup file
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf
+      - ./mac_map.json:/etc/telegraf/mac_map.json
     restart: always
 
   grafana:
     image: grafana/grafana:10.2.0
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin123
       - GF_INSTALL_PLUGINS=grafana-simple-json-datasource
