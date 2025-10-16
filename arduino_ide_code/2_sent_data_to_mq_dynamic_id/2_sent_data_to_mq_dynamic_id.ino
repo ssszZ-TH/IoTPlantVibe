@@ -44,16 +44,16 @@ NTPClient timeClient(ntpUDP, "pool.ntp.org", 25200, 60000); // NTP client (UTC+7
 #endif
 PubSubClient mqttClient(espClient); // MQTT client
 
+String sensorId; // ตัวแปร global สำหรับเก็บ MAC address
+
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);    // ตั้งค่า LED pin เป็น output
   Serial.begin(115200);            // เริ่ม Serial communication
   dht.begin();                     // เริ่มต้น DHT sensor
   
-  // ดึง MAC address เป็น SENSOR_ID
-  String sensorId = WiFi.macAddress(); // e.g., "24:0A:C4:12:34:56"
-  
-  // สร้าง topic เฉพาะ sensor (e.g., cucumber/sensors/24:0A:C4:12:34:56)
-  snprintf(mqtt_topic, sizeof(mqtt_topic), "cucumber/sensors/%s", sensorId.c_str());
+  // รอให้ WiFi stack เริ่มต้นสมบูรณ์
+  WiFi.mode(WIFI_STA);            // ตั้งค่าเป็น Station mode
+  delay(100);                     // รอสั้นๆ เพื่อให้ WiFi stack พร้อม
   
   // WiFi connect
   WiFi.begin(ssid, password);      // เริ่มเชื่อมต่อ WiFi
@@ -68,6 +68,17 @@ void setup() {
   }
   Serial.println("WiFi connected");
 
+  // ดึง MAC address เป็น SENSOR_ID หลังจาก WiFi ต่อสำเร็จ
+  sensorId = WiFi.macAddress(); // e.g., "24:0A:C4:12:34:56"
+  if (sensorId == "00:00:00:00:00:00") { // ตรวจสอบ MAC address ไม่ถูกต้อง
+    Serial.println("Error: Invalid MAC address, restarting...");
+    ESP.restart(); // รีสตาร์ทถ้าได้ MAC address ไม่ถูกต้อง
+  }
+  Serial.println("MAC Address: " + sensorId);
+  
+  // สร้าง topic เฉพาะ sensor (e.g., cucumber/sensors/24:0A:C4:12:34:56)
+  snprintf(mqtt_topic, sizeof(mqtt_topic), "cucumber/sensors/%s", sensorId.c_str());
+  
   // เริ่มต้น NTP
   timeClient.begin();
 
@@ -102,7 +113,7 @@ void loop() {
   // สร้าง JSON payload
   StaticJsonDocument<200> doc;
   doc["time"] = isoTime;                       // Timestamp
-  doc["sensor_id"] = WiFi.macAddress();        // ใช้ full MAC address เป็น sensor_id
+  doc["sensor_id"] = sensorId;                 // ใช้ global sensorId
   doc["temp"] = temp;                          // อุณหภูมิ
   doc["hum"] = hum;                            // ความชื้น
   doc["light"] = lumen;                        // ความสว่าง (lumen)
@@ -125,7 +136,10 @@ void reconnect() {
   while (!mqttClient.connected() && (millis() - start < 30000)) { // Timeout 30 วินาที
     Serial.print("Connecting MQTT...");
     // ใช้ MAC address เป็น client ID
-    String sensorId = WiFi.macAddress();
+    if (sensorId == "00:00:00:00:00:00") { // ตรวจสอบ MAC address อีกครั้ง
+      Serial.println("Error: Invalid MAC address, restarting...");
+      ESP.restart();
+    }
     #if USE_LOCAL
       if (mqttClient.connect(sensorId.c_str())) { // เชื่อมต่อ MQTT สำหรับ local
         Serial.println("connected");
