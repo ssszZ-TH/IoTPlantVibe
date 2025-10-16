@@ -30,8 +30,7 @@ services:
       - mosquitto
       - influxdb
     volumes:
-      - ./telegraf.conf:/etc/telegraf/telegraf.conf
-      - ./mac_map.json:/etc/telegraf/mac_map.json
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro # ro = read-only cannot edit from container
     restart: always
 
   grafana:
