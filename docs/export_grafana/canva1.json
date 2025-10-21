@@ -1,0 +1,454 @@
+{
+  "datasource": {
+    "type": "influxdb",
+    "uid": "P951FEA4DE68E13C5"
+  },
+  "fieldConfig": {
+    "defaults": {
+      "mappings": [],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          },
+          {
+            "color": "orange",
+            "value": 40
+          }
+        ]
+      },
+      "color": {
+        "mode": "thresholds"
+      }
+    },
+    "overrides": []
+  },
+  "gridPos": {
+    "h": 29,
+    "w": 24,
+    "x": 0,
+    "y": 0
+  },
+  "id": 20,
+  "options": {
+    "inlineEditing": true,
+    "showAdvancedTypes": true,
+    "root": {
+      "background": {
+        "color": {
+          "fixed": "#00000000"
+        },
+        "image": {
+          "fixed": "https://github.com/ssszZ-TH/IoTPlantVibe/blob/main/docs/plan/0020_001_page-0001.jpg?raw=true",
+          "mode": "fixed"
+        },
+        "size": "contain"
+      },
+      "border": {
+        "color": {
+          "fixed": "dark-green"
+        },
+        "width": 0
+      },
+      "elements": [
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"7C:DF:A1:00:AA:66\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "connections": [],
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "vara tem 1",
+          "placement": {
+            "height": 23.96666717529297,
+            "left": 867,
+            "top": 223,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        },
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"60:55:F9:EC:C3:D6\", topic=\"cucumber/sensors/60:55:F9:EC:C3:D6\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "vara tem 2",
+          "placement": {
+            "top": 228,
+            "height": 23.96666717529297,
+            "left": 947,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        },
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "vara tem 3",
+          "placement": {
+            "top": 224,
+            "height": 23.96666717529297,
+            "left": 1021,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        },
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"7C:DF:A1:00:AD:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "yut 1",
+          "placement": {
+            "top": 345,
+            "height": 23.96666717529297,
+            "left": 868,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        },
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"60:55:F9:ED:36:E8\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "yut 2",
+          "placement": {
+            "top": 351,
+            "height": 23.96666717529297,
+            "left": 948,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        },
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"60:55:F9:EC:D4:4E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "yut 3",
+          "placement": {
+            "top": 355,
+            "height": 23.96666717529297,
+            "left": 1020,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        },
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "hum {host=\"f199a2094793\", sensor_id=\"7C:DF:A1:00:AA:66\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "vara hum 1",
+          "placement": {
+            "top": 709,
+            "height": 23.96666717529297,
+            "left": 861,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        },
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "hum {host=\"f199a2094793\", sensor_id=\"60:55:F9:EC:C3:D6\", topic=\"cucumber/sensors/60:55:F9:EC:C3:D6\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "vara hum 2",
+          "placement": {
+            "top": 704,
+            "height": 23.96666717529297,
+            "left": 936,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        },
+        {
+          "background": {
+            "color": {
+              "fixed": "orange"
+            },
+            "image": {
+              "field": "temp {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "config": {
+            "align": "center",
+            "color": {
+              "fixed": "#000000"
+            },
+            "size": 16,
+            "text": {
+              "field": "hum {host=\"f199a2094793\", sensor_id=\"68:67:25:2D:02:6E\", topic=\"cucumber/sensors/00:00:00:00:00:00\"}",
+              "fixed": "",
+              "mode": "field"
+            },
+            "valign": "middle"
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "name": "vara hum 3",
+          "placement": {
+            "top": 708,
+            "height": 23.96666717529297,
+            "left": 1017,
+            "width": 45.000003814697266
+          },
+          "type": "metric-value"
+        }
+      ],
+      "name": "Element 1760694193276",
+      "type": "frame"
+    }
+  },
+  "pluginVersion": "10.2.0",
+  "targets": [
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
+      "hide": false,
+      "query": "from(bucket: \"sensors\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"cucumber\")\r\n  |> filter(fn: (r) => r[\"host\"] == \"f199a2094793\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+      "refId": "A"
+    }
+  ],
+  "title": "building 615 floor 2",
+  "type": "canvas"
+}
